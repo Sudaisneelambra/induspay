@@ -7,18 +7,32 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ServicesComponent } from './components/services/services.component';
+import { WhyChooseUsComponent } from './components/why-choose-us/why-choose-us.component';
+import { CaseStudyComponent } from './components/case-study/case-study.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactFormComponent } from './pages/contact-form/contact-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AllUsersComponent } from './pages/all-users/all-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ContactFormComponent,
+    AllUsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NavbarComponent,
     HeroComponent,
-    ServicesComponent
+    ServicesComponent,
+    WhyChooseUsComponent,
+    CaseStudyComponent,
+    FooterComponent,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

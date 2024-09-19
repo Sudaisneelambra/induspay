@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule,ButtonComponent],
-  templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+  imports: [CommonModule, ButtonComponent],
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
-export class HeroComponent {
+export class FooterComponent {
 
 }

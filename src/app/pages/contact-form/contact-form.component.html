@@ -1,0 +1,87 @@
+<div class="border-2 py-10 bg-[gray]">
+    <h1 class="text-center m-6 font-bold text-[25px]">Contact Form</h1>
+    <div class="container  ">
+        <form [formGroup]="userForm"  >
+          <div>
+            <label>First Name:</label>
+            <input type="text" formControlName="first_name" placeholder="Enter First Name">
+            <div *ngIf="userForm.get('first_name')?.touched && userForm.get('first_name')?.invalid">
+              <small *ngIf="userForm.get('first_name')?.errors?.['required']">First Name is required.</small>
+              <small *ngIf="userForm.get('first_name')?.errors?.['minlength']">First Name must be at least 3 characters long.</small>
+            </div>
+          </div>
+      
+          <div>
+            <label>Last Name:</label>
+            <input type="text" formControlName="last_name" placeholder="Enter Last Name">
+            <div *ngIf="userForm.get('last_name')?.touched && userForm.get('last_name')?.invalid">
+              <small *ngIf="userForm.get('last_name')?.errors?.['required']">Last Name is required.</small>
+            </div>
+          </div>
+      
+          <div>
+            <label>Email ID:</label>
+            <input type="email" formControlName="emailId" placeholder="Enter Email ID">
+            <div *ngIf="userForm.get('emailId')?.touched && userForm.get('emailId')?.invalid">
+              <small *ngIf="userForm.get('emailId')?.errors?.['required']">Email is required.</small>
+              <small *ngIf="userForm.get('emailId')?.errors?.['email']">Invalid email format.</small>
+            </div>
+          </div>
+      
+          <div>
+            <label>Age:</label>
+            <input type="number" formControlName="age" placeholder="Enter Age">
+            <div *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid">
+              <small *ngIf="userForm.get('age')?.errors?.['required']">Age is required.</small>
+              <small *ngIf="userForm.get('age')?.errors?.['min']">Minimum age is 18.</small>
+            </div>
+          </div>
+      
+          <div>
+            <label>Gender:</label>
+            <select formControlName="gender">
+              <option value="" disabled>Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <div *ngIf="userForm.get('gender')?.touched && userForm.get('gender')?.invalid">
+              <small *ngIf="userForm.get('gender')?.errors?.['required']">Gender is required.</small>
+            </div>
+          </div>
+      
+          <div>
+            <label>Mobile Number:</label>
+            <input type="text" formControlName="mobilenumber" placeholder="Enter Mobile Number">
+            <div *ngIf="userForm.get('mobilenumber')?.touched && userForm.get('mobilenumber')?.invalid">
+              <small *ngIf="userForm.get('mobilenumber')?.errors?.['required']">Mobile Number is required.</small>
+              <small *ngIf="userForm.get('mobilenumber')?.errors?.['pattern']">Mobile Number must be 10 digits.</small>
+            </div>
+          </div>
+      
+          <div>
+            <label>PAN No:</label>
+            <input type="text" formControlName="pan_no" placeholder="Enter PAN No">
+            <div *ngIf="userForm.get('pan_no')?.touched && userForm.get('pan_no')?.invalid">
+              <small *ngIf="userForm.get('pan_no')?.errors?.['required']">PAN No is required.</small>
+              <small *ngIf="userForm.get('pan_no')?.errors?.['pattern']">Invalid PAN No format (e.g. ABCDE1234F).</small>
+            </div>
+          </div>
+      
+          <div>
+            <label>Aadhaar No:</label>
+            <input type="text" formControlName="adhaar_no" placeholder="Enter Aadhaar No">
+            <div *ngIf="userForm.get('adhaar_no')?.touched && userForm.get('adhaar_no')?.invalid">
+              <small *ngIf="userForm.get('adhaar_no')?.errors?.['required']">Aadhaar No is required.</small>
+              <small *ngIf="userForm.get('adhaar_no')?.errors?.['pattern']">Aadhaar No must be 12 digits.</small>
+            </div>
+          </div>
+      
+          <div class=" flex justify-between w-[100%]">
+            <button type="submit" [disabled]="userForm.invalid" (click)="onSubmit()">{{data ?'edit':'submit'}}</button>
+            <button (click)="goToAllUsers()" >Show Users</button>
+          </div>
+
+        </form>
+      </div>
+      
+</div>

@@ -1,0 +1,53 @@
+<div class="max-w-7xl mx-auto mt-10">
+    <table class="min-w-full table-auto bg-white shadow-md rounded-lg">
+      <thead class="bg-gray-800 text-white">
+        <tr>
+          <th class="px-4 py-2 text-left">Created At</th>
+          <th class="px-4 py-2 text-left">First Name</th>
+          <th class="px-4 py-2 text-left">Last Name</th>
+          <th class="px-4 py-2 text-left">Email</th>
+          <th class="px-4 py-2 text-left">Age</th>
+          <th class="px-4 py-2 text-left">Gender</th>
+          <th class="px-4 py-2 text-left">Mobile Number</th>
+          <th class="px-4 py-2 text-left">PAN Number</th>
+          <th class="px-4 py-2 text-left">Aadhaar Number</th>
+          <th class="px-4 py-2 text-left">Status</th>
+          <th class="px-4 py-2 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="users && users.length>0; else nodata">
+            <tr *ngFor="let user of users" class="border-b hover:bg-gray-100">
+                <td class="px-4 py-2">{{ user?.createdAt }}</td>
+                <td class="px-4 py-2">{{ user?.first_name }}</td>
+                <td class="px-4 py-2">{{ user?.last_name }}</td>
+                <td class="px-4 py-2">{{ user?.emailId }}</td>
+                <td class="px-4 py-2">{{ user?.age }}</td>
+                <td class="px-4 py-2">{{ user?.gender }}</td>
+                <td class="px-4 py-2">{{ user?.mobilenumber }}</td>
+                <td class="px-4 py-2">{{ user?.pan_no }}</td>
+                <td class="px-4 py-2">{{ user?.adhaar_no }}</td>
+                <td class="px-4 py-2">
+                  <span
+                    class="px-2 py-1 rounded-full text-xs font-bold"
+                    [ngClass]="{
+                      'bg-green-500 text-white': user.status,
+                      'bg-red-500 text-white': !user.status
+                    }">
+                    {{ user.status ? 'Active' : 'Inactive' }}
+                  </span>
+                </td>
+                <td class="px-4 py-2">
+                  <button class="text-blue-500 hover:underline mr-2" (click)="editUser(user)">Edit</button>
+                  <button class="text-red-500 hover:underline" (click)="deleteUser(user)">Delete</button>
+                </td>
+              </tr>
+        </ng-container>
+        <ng-template #nodata>
+            <h1>NO Data Found</h1>
+        </ng-template>
+      </tbody>
+    </table>
+    <button class="py-2 px-4 rounded-lg bg-[gray] mt-3" (click)="backToHome()">Back To Home</button>
+  </div>
+  

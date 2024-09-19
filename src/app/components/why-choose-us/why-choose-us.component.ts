@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-why-choose-us',
   standalone: true,
   imports: [CommonModule,ButtonComponent],
-  templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+  templateUrl: './why-choose-us.component.html',
+  styleUrls: ['./why-choose-us.component.css']
 })
-export class HeroComponent {
+export class WhyChooseUsComponent {
 
 }
