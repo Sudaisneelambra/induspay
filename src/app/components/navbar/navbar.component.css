@@ -40,7 +40,7 @@
     width: 300px;
     height: 100vh;
     background-color: #f3f6f9;
-    transform: translateX(-300px);
+    transform: translateX(-310px);
     transition: .4s ease-in-out;
 }
 .side-menu-open{
@@ -77,4 +77,14 @@
         align-items: center;
         margin-left: 20px;
     }
+}
+
+.side-menu-uls li{
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 22px;
+    /* background-color: azure; */
+    box-shadow: 0px 0px 7px 0px rgba(128, 128, 128, 0.521);
 }

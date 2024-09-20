@@ -1,0 +1,38 @@
+<div #ourStorySection class="w-full flex justify-center items-center flex-col my-11">
+    <div class="w-[80%] mt-[70px] main">
+        <p class="uppercase text-[red] text-[15px]">Our Story</p>
+        <h1 class="head w-[50%] h-[150px] text-[28px] font-[800]" [innerHTML]="displayedText"></h1>
+    </div>
+    <div class="w-[80%] flex main-one">
+        <div class="w-[40%] flex justify-center items-center py-36">
+            <img src="/assets/figma/Img.svg" alt="" class="w-[75%] imgbig" [ngClass]="{'imgbigs':boolean}">
+        </div>
+        <div class="w-[60%]">
+            <div class="w-[100%] flex gap-2">
+                <div class="img1 w-[60%] flex justify-center items-center">
+                    <img src="/assets/figma/lady.svg" alt="" class="w-[70%]">
+                </div>
+                <div class="img2 w-[40%] flex justify-center items-center relative">
+                    <img src="/assets/figma/ lady2.svg" alt="" class="laby absolute top-[35%]">
+                </div>
+            </div>
+            <div class="q1 p-[70px] flex justify-center">
+                <h1 class="h1 font-[200] w-[90%]">We share common trends and strategies for improving your rental income and making sure you stay in high demand. With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</h1>
+            </div>
+        </div>
+    </div>
+    <div class="w-[80%] flex gap-2 flex-wrap justify-evenly bottom mt-10 mb-20">
+        <div class="w-[300px]">
+            <h1>{{ percentage==92 ? '1M': percentage }}</h1>
+            <p>Customers visit Omega every month to get their service done.</p>
+        </div>
+        <div class="w-[300px]">
+            <h1>{{ percentage }}%</h1>
+            <p>Satisfaction rate comes from our awesome customers.</p>
+        </div>
+        <div class="w-[300px]">
+            <h1>4.9/5.0</h1>
+            <p>Average customer ratings we have got all over internet.</p>
+        </div>
+    </div>
+</div>

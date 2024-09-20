@@ -14,6 +14,7 @@ import { ContactFormComponent } from './pages/contact-form/contact-form.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AllUsersComponent } from './pages/all-users/all-users.component';
+import { OurStoryComponent } from './components/our-story/our-story.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AllUsersComponent } from './pages/all-users/all-users.component';
     WhyChooseUsComponent,
     CaseStudyComponent,
     FooterComponent,
+    OurStoryComponent,
     ReactiveFormsModule,
     HttpClientModule
   ],
