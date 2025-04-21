@@ -28,6 +28,29 @@ export class NavbarComponent {
   }
 
   gotToContactForm(){
-    this.router.navigate(['/contact-form'])
+    const contactScreen = document.getElementById('contact')
+    contactScreen?.scrollIntoView({behavior:'smooth'})
+    this.openMenu = false
+
+  }
+
+
+  goToHomePage(){
+    const homeScreen = document.getElementById('hero')
+    homeScreen?.scrollIntoView({behavior:'smooth'})
+    this.openMenu = false
+
+  }
+
+  goToServicesPage(){
+    const serviceScreen = document.getElementById('services')
+    serviceScreen?.scrollIntoView({behavior:'smooth'})
+    this.openMenu = false
+  }
+
+  goToDirectorsPage(){
+    const serviceScreen = document.getElementById('directors')
+    serviceScreen?.scrollIntoView({behavior:'smooth'})
+    this.openMenu = false
   }
 }

@@ -10,21 +10,24 @@ import { ServicesComponent } from './components/services/services.component';
 import { WhyChooseUsComponent } from './components/why-choose-us/why-choose-us.component';
 import { CaseStudyComponent } from './components/case-study/case-study.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { OurStoryComponent } from './components/our-story/our-story.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { Notfound } from './pages/notFount/notfound.component';
+import { RouterModule } from '@angular/router';
+import { ProductComponent } from './pages/singleProducts/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactFormComponent,
-    AllUsersComponent
+    Notfound,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     NavbarComponent,
     HeroComponent,
@@ -33,8 +36,9 @@ import { OurStoryComponent } from './components/our-story/our-story.component';
     CaseStudyComponent,
     FooterComponent,
     OurStoryComponent,
+    ContactComponent,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

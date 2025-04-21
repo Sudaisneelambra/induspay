@@ -11,4 +11,9 @@ import { ButtonComponent } from '../button/button.component';
 })
 export class FooterComponent {
 
+  gotToContactForm(){
+    const contactScreen = document.getElementById('contact')
+    contactScreen?.scrollIntoView({behavior:'smooth'})
+  }
+
 }

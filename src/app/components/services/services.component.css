@@ -44,6 +44,12 @@
     }
     .second{
         align-items: center;
-        gap: 20px;
+        gap: 5px;
+    }
+}
+
+@media(max-width:400px){
+    .services{
+        width: 80% !important;
     }
 }

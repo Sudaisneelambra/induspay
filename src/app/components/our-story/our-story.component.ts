@@ -11,25 +11,30 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class OurStoryComponent implements OnInit {
   
   @ViewChild('ourStorySection', { static: true }) ourStorySection!: ElementRef;
+  @ViewChild('customerStatsSection', { static: true }) customerStatsSection!: ElementRef;
 
 
   percentage: number = 0;
-  targetPercentage: number = 92;
+  targetPercentage: number = 98;
   percentageDuration = 2000;
 
   boolean=false
   animationStarted = false;
+  booleanCount=false
+  animationStartedCount = false;
 
   observer!: IntersectionObserver;
 
-  fullText: string = 'We know how everything works and why your business is failing over and over again.';
+  fullText: string = 'Transforming spaces with elegant, custom aluminium solutions and expert craftsmanship.';
   displayedText: string = '';
   index: number = 0;
   delay: number = 50;
 
   ngOnInit(): void {
     this.setUpIntersectionObserver();
+    this.setUpCountObserver()
   }
+  
 
 
   /**text animation */
@@ -51,7 +56,7 @@ export class OurStoryComponent implements OnInit {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !this.animationStarted) {
-          this.startPercentageCount();
+          // this.startPercentageCount();
           this.animateText()
           this.animationStarted = true;
           this.boolean=true  
@@ -63,6 +68,30 @@ export class OurStoryComponent implements OnInit {
 
     this.observer.observe(this.ourStorySection.nativeElement);
   }
+
+  setUpCountObserver(): void {
+    const options = {
+      root: null, 
+      threshold: 0.2, 
+    };
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !this.animationStartedCount) {
+          this.startPercentageCount();
+          // this.animateText()
+          this.animationStartedCount = true;
+          this.booleanCount=true  
+        } else if (!entry.isIntersecting && this.animationStarted) {
+          this.resetCountCount();  
+        }
+      });
+    }, options);
+
+    this.observer.observe(this.customerStatsSection.nativeElement);
+  }
+
+
 
 
   /**percentage count */
@@ -86,11 +115,16 @@ export class OurStoryComponent implements OnInit {
   
   /**reset count */
   resetCount(): void { 
-      this.percentage = 0;
       this.animationStarted = false; 
       this.boolean = false;
       this.displayedText=''
       this.index=0
   }
+
+  resetCountCount(): void { 
+    this.percentage = 0;
+    this.animationStartedCount = false;
+    this.booleanCount=false; 
+}
   
 }

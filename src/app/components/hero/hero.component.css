@@ -39,6 +39,11 @@
 .hero{
     background-color: #f4f7fa;
 }
+.image-aluminium{
+    background-image: url('/assets/images/home-design.jpg');
+    background-position: center;
+    background-size: cover;
+}
 
 @media(max-width:700px){
     .hero-parts{
